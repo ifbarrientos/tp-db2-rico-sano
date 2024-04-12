@@ -4,7 +4,7 @@ CREATE DATABASE sistema;
 use sistema;
 
 create table Profesional (
-	id INTEGER(11),
+	id INTEGER(11) NOT NULL auto_increment,
 	nombre VARCHAR(30), 
 	apellido VARCHAR(30), 
 	matricula VARCHAR(255),
@@ -16,7 +16,7 @@ create table Profesional (
 );
 
 create table Paciente (
-	id INTEGER(11),
+	id INTEGER(11) NOT NULL auto_increment,
 	nombre VARCHAR(30),
 	apellido VARCHAR(30),
 	modelo_cintura FLOAT,
@@ -36,7 +36,7 @@ create table Paciente (
 );
 
 create table Plan (
-	id INTEGER(11),
+	id INTEGER(11) NOT NULL auto_increment,
 	periodo ENUM(
 		'Semanal',
 		'Quincenal',
@@ -52,20 +52,20 @@ create table Plan (
 );
 
 create table Objetivo (
-	id integer(11),
+	id integer(11) NOT NULL auto_increment,
 	cumplido BOOLEAN,
 	descripcion VARCHAR(255),
 	PRIMARY KEY(id)
 );
 
 create table Comida (
-	id INTEGER(11),
+	id INTEGER(11) NOT NULL auto_increment,
 	descripcion VARCHAR(255),
 	PRIMARY KEY (id)
 );
 
 create table Comida_AC (
-	id INTEGER(11),
+	id INTEGER(11) NOT NULL,
 	id_comida INTEGER(11),
 	proteinas FLOAT,
 	carbohidratos FLOAT,
@@ -75,14 +75,14 @@ create table Comida_AC (
 );
 
 create table Comida_DM (
-	id INTEGER(11),
+	id INTEGER(11) NOT NULL,
 	id_comida INTEGER(11),
 	PRIMARY KEY (id),
 	FOREIGN KEY (id_comida) REFERENCES Comida (id)
 );
 
 create table Colacion (
-	id INTEGER(11),
+	id INTEGER(11) NOT NULL auto_increment,
 	id_plan INTEGER(11),
 	nombre VARCHAR(255),
 	PRIMARY KEY (id),
@@ -90,7 +90,7 @@ create table Colacion (
 );
 
 create table Bebida(
-	id INTEGER(11),
+	id INTEGER(11) NOT NULL auto_increment,
 	id_plan INTEGER(11),
 	nombre VARCHAR(255),
 	PRIMARY KEY (id),
