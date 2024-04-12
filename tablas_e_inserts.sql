@@ -96,3 +96,27 @@ create table Bebida(
 	PRIMARY KEY (id),
 	FOREIGN KEY (id_plan) REFERENCES Plan(id)
 );
+
+insert into Profesional values (1, 'Ignacio', 'Barrientos', '12395023845', 'Deportólogo', JSON_QUOTE('Hola mundo!'));
+insert into Profesional values (2, 'Francisco', 'Barrientos', '1290837', 'Deportólogo', JSON_QUOTE('Ejemplo'));
+
+insert into Paciente values (1, 'Ignacio', 'Franco', 20.2, 60.1, 'Masculino', 'Ciclismo');
+insert into Paciente values (2, 'Alejandro', 'Moras', 24.3, 65.4, 'Masculino', 'Natación');
+
+insert into Plan values (1,'Semanal', JSON_QUOTE('Sin observaciones'), 'Excelente');
+insert into Plan values (2,'Mensual', JSON_QUOTE('No hizo los ejercicios solicitados'), 'Regular');
+
+insert into Objetivo values (1, false, 'No tomar alcohol');
+insert into Objetivo values (2, true, 'No tener un dia inactivo');
+
+insert into Comida values (1,'Zanahoria');
+insert into Comida values (2,'Lechuga');
+
+insert into Comida_AC values (1,2, 100.0, 90.0, 87.0);
+insert into Comida_DM values (2, 1);
+
+insert into Colacion values (1, 1, 'Galletas de agua');
+insert into Colacion values (2, 2, 'Avena');
+
+insert into Bebida values (1,1, 'Leche');
+insert into Bebida values (2,2, 'Agua');
